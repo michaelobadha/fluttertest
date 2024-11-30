@@ -1,0 +1,1 @@
+ /home/michael/Desktop/Hackerthorns/fluttertest/.dart_tool/flutter_build/c8c1755fb88b2734b366a1d71990aae1/native_assets.yaml: 

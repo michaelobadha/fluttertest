@@ -409,7 +409,7 @@
             "outputFile": "com.example.fluttertest.app-merged_res-26:/values-night-v8_values-night-v8.arsc.flat",
             "map": [
                 {
-                    "source": "/home/michael/Desktop/Development/fluttertest/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/home/michael/Desktop/Hackerthorns/fluttertest/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
@@ -447,25 +447,6 @@
         {
             "outputFile": "com.example.fluttertest.app-merged_res-26:/values_values.arsc.flat",
             "map": [
-                {
-                    "source": "/home/michael/Desktop/Development/fluttertest/android/app/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "3,14",
-                        "startColumns": "4,4",
-                        "startOffsets": "173,818",
-                        "endLines": "7,16",
-                        "endColumns": "12,12",
-                        "endOffsets": "476,982"
-                    },
-                    "to": {
-                        "startLines": "155,159",
-                        "startColumns": "4,4",
-                        "startOffsets": "7894,8075",
-                        "endLines": "158,161",
-                        "endColumns": "12,12",
-                        "endOffsets": "8070,8239"
-                    }
-                },
                 {
                     "source": "/home/michael/.gradle/caches/transforms-3/c3e60d8edb6a86f432de0791fcaa87bd/transformed/lifecycle-runtime-2.7.0/res/values/values.xml",
                     "from": {
@@ -589,6 +570,25 @@
                         "startOffsets": "7045",
                         "endColumns": "49",
                         "endOffsets": "7090"
+                    }
+                },
+                {
+                    "source": "/home/michael/Desktop/Hackerthorns/fluttertest/android/app/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "173,818",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "476,982"
+                    },
+                    "to": {
+                        "startLines": "155,159",
+                        "startColumns": "4,4",
+                        "startOffsets": "7894,8075",
+                        "endLines": "158,161",
+                        "endColumns": "12,12",
+                        "endOffsets": "8070,8239"
                     }
                 },
                 {
