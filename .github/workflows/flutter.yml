@@ -14,4 +14,4 @@ jobs:
       - run: flutter pub get
       - run: flutter build apk --release
       - name: Upload to Firebase App Distribution
-        run: firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app <YOUR_FIREBASE_APP_ID>
+        run: firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app 1:504128417881:android:7141548a77bf79ded58148
