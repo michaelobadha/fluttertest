@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../services/api_service.dart';
 
 class PropertyList extends StatefulWidget {
+  const PropertyList({super.key});
+
   @override
   _PropertyListState createState() => _PropertyListState();
 }
@@ -19,12 +21,12 @@ class _PropertyListState extends State<PropertyList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Properties')),
+      appBar: AppBar(title: const Text('Properties')),
       body: FutureBuilder<List<dynamic>>(
         future: properties,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else {
