@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "504128417881",
+    "project_id": "laara-ec35c",
+    "storage_bucket": "laara-ec35c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504128417881:android:7141548a77bf79ded58148",
+        "android_client_info": {
+          "package_name": "com.example.fluttertest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwQ8rwm_o35nRoGeY3mhTNDEH1hcXZNyI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
