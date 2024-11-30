@@ -1,17 +1,58 @@
 name: Flutter CI/CD
+
 on:
   push:
     branches:
-      - main
+      - main # Run workflow on push to the main branch
+
 jobs:
-  build:
+  build-and-deploy:
+    name: Build and Deploy
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.13.0'
-      - run: flutter pub get
-      - run: flutter build apk --release
-      - name: Upload to Firebase App Distribution
-        run: firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app 1:504128417881:android:7141548a77bf79ded58148
+    # Checkout the repository
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    # Set up Flutter environment
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.13.0' # Specify the Flutter version
+
+    # Install dependencies
+    - name: Install Dependencies
+      run: flutter pub get
+
+    # Run tests (optional)
+    - name: Run Tests
+      run: flutter test
+
+    # Build APK/AAB for Android
+    - name: Build APK
+      run: flutter build apk --release
+
+    - name: Build AAB
+      run: flutter build appbundle --release
+
+    # Upload APK to Firebase App Distribution
+    - name: Deploy APK to Firebase
+      run: firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app ${{ secrets.APP_ID_ANDROID }}
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
+    # Upload AAB to Firebase App Distribution (Optional)
+    - name: Deploy AAB to Firebase
+      run: firebase appdistribution:distribute build/app/outputs/bundle/release/app-release.aab --app ${{ secrets.APP_ID_ANDROID }}
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
+    # (Optional) Build and deploy iOS app
+    - name: Build iOS
+      if: runner.os == 'macOS'
+      run: |
+        flutter build ios --release
+        firebase appdistribution:distribute build/ios/ipa/Runner.ipa --app ${{ secrets.APP_ID_IOS }}
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
